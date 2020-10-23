@@ -14,13 +14,23 @@ namespace IS7.Controllers
     public class InterviewsController : Controller
     {
         private IS7_DBEntities db = new IS7_DBEntities();
-
-        // GET: Interviews
-        public async Task<ActionResult> Index()
+        public ActionResult Index(string searchBy, string search)
         {
-            var interviews = db.Interviews.Include(i => i.User);
-            return View(await interviews.ToListAsync());
+            if (searchBy == "InterviewCompany")
+            {
+                return View(db.Interviews.Where(x => x.InterviewCompany.StartsWith(search) || search == null).ToList());
+            }
+            else
+            {
+                return View(db.Interviews.Where(x => x.MNumber.EndsWith(search) || search == null).ToList());
+            }
         }
+        // GET: Interviews
+        //public async Task<ActionResult> Index()
+        //{
+        //    var interviews = db.Interviews.Include(i => i.User);
+        //    return View(await interviews.ToListAsync());
+        //}
 
         // GET: Interviews/Details/5
         public async Task<ActionResult> Details(string id)

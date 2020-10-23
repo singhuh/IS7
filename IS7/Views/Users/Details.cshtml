@@ -60,6 +60,50 @@
         </dd>
 
     </dl>
+    <table class="table table-condensed table-responsive">
+        <tr>
+            <th>
+                Company Interviewed
+            </th>
+        </tr>
+        @foreach (var interview in Model.Interviews)
+        {
+            <tr>
+                <td>
+                    <p>
+                        @interview.InterviewCompany
+                    </p>
+                </td>
+            </tr>
+        }
+    </table>
+
+    <table class="table table-condensed table-responsive">
+        <tr>
+            <th>
+                Previous Experience
+            </th>
+            <th>
+                Previous Company
+            </th>
+        </tr>
+        @foreach (var experience in Model.WorkHistories)
+        {
+            <tr>
+                <td>
+                    <p>
+                        @experience.TitleName
+                    </p>
+                </td>                
+                <td>
+                    <p>
+                        @experience.CompanyName
+                    </p>
+                </td>
+            </tr>
+        }
+    </table>
+
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.MNumber }) |

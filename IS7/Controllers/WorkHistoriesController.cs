@@ -16,11 +16,21 @@ namespace IS7.Controllers
         private IS7_DBEntities db = new IS7_DBEntities();
 
         // GET: WorkHistories
-        public async Task<ActionResult> Index()
-        {
-            var workHistories = db.WorkHistories.Include(w => w.Company).Include(w => w.Title).Include(w => w.User);
-            return View(await workHistories.ToListAsync());
+        public ActionResult Index(string searchBy, string search)
+        { if (searchBy == "CompanyName")
+            {
+                return View(db.WorkHistories.Where(x => x.CompanyName.StartsWith(search) || search == null).ToList());
+            }        
+            else 
+            { 
+             return View(db.WorkHistories.Where(x => x.TitleName.StartsWith(search) || search == null).ToList());
+            }
         }
+
+        //{
+        //    var workHistories = db.WorkHistories.Include(w => w.Company).Include(w => w.Title).Include(w => w.User);
+        //    return View(await workHistories.ToListAsync());
+        //}
 
         // GET: WorkHistories/Details/5
         public async Task<ActionResult> Details(string id)
