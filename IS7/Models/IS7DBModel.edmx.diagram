@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="910c2facf7b44f99a22393f69b45aa2c" Name="Diagram1">
+        <EntityTypeShape EntityType="IS7_DBModel.Company" Width="1.5" PointX="7.875" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="IS7_DBModel.Interview" Width="1.5" PointX="2.75" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="IS7_DBModel.Title" Width="1.5" PointX="7.75" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="IS7_DBModel.User" Width="1.5" PointX="0.75" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IS7_DBModel.WorkHistory" Width="1.5" PointX="5.25" PointY="3" IsExpanded="true" />
+        <AssociationConnector Association="IS7_DBModel.FK_dbo_WorkHistory_dbo_Company_CompanyName" ManuallyRouted="false" />
+        <AssociationConnector Association="IS7_DBModel.FK_dbo_Interview_dbo_User_MNumber" ManuallyRouted="false" />
+        <AssociationConnector Association="IS7_DBModel.FK_dbo_WorkHistory_dbo_Title_TitleName" ManuallyRouted="false" />
+        <AssociationConnector Association="IS7_DBModel.FK_dbo_WorkHistory_dbo_User_MNumber" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,60 @@
+﻿@model IEnumerable<IS7.Models.Interview>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.User.MNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.User.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InterviewCompany)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InterviewDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Offer)
+        </th>
+
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.User.MNumber)
+    </td>    
+    <td>
+        @Html.DisplayFor(modelItem => item.User.LastName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.InterviewCompany)
+    </td>    
+    <td>
+        @Html.DisplayFor(modelItem => item.InterviewDate)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Offer)
+    </td>
+
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+        @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+        @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+    </td>
+</tr>
+}
+
+</table>
