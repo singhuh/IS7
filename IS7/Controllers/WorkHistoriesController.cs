@@ -11,6 +11,7 @@ using IS7.Models;
 
 namespace IS7.Controllers
 {
+
     public class WorkHistoriesController : Controller
     {
         private IS7_DBEntities db = new IS7_DBEntities();
